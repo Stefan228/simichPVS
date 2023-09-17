@@ -1,5 +1,4 @@
 #1
-
 #include <iostream>
 
 int main() {
@@ -17,4 +16,310 @@ int main() {
     return 0;
 }
 
+
+#2
+#include <iostream>
+#include <cmath> // Для использования функции sqrt
+
+int main() {
+    double a, b;
+    
+    // Введите значения катетов a и b
+    std::cout << "Введите значение катета a: ";
+    std::cin >> a;
+    
+    std::cout << "Введите значение катета b: ";
+    std::cin >> b;
+
+    // Вычислите гипотенузу c
+    double c = sqrt(a * a + b * b);
+
+    // Выведите результат
+    std::cout << "Гипотенуза треугольника с катетами a и b: " << c << std::endl;
+
+    return 0;
+}
+
+
+#3
+#include <iostream>
+
+int main() {
+    int number;
+
+    // Введите натуральное число
+    std::cout << "Введите натуральное число: ";
+    std::cin >> number;
+
+    // Вычислите последнюю цифру
+    int lastDigit = number % 10;
+
+    // Выведите последнюю цифру
+    std::cout << "Последняя цифра числа: " << lastDigit << std::endl;
+
+    return 0;
+}
+
+
+#4
+#include <iostream>
+
+int main() {
+    int number;
+
+    // Введите неотрицательное целое число
+    std::cout << "Введите неотрицательное целое число: ";
+    std::cin >> number;
+
+    // Найдите число десятков
+    int tens = (number / 10) % 10;
+
+    // Выведите число десятков
+    std::cout << "Число десятков: " << tens << std::endl;
+
+    return 0;
+}
+
+
+#5
+#include <iostream>
+
+int main() {
+    int number;
+
+    // Введите двузначное число
+    std::cout << "Введите двузначное число: ";
+    std::cin >> number;
+
+    // Проверьте, что введено двузначное число (от 10 до 99)
+    if (number >= 10 && number <= 99) {
+        // Найдите число десятков
+        int tens = number / 10;
+
+        // Выведите число десятков
+        std::cout << "Число десятков: " << tens << std::endl;
+    } else {
+        std::cout << "Введенное число не является двузначным." << std::endl;
+    }
+
+    return 0;
+}
+
+
+#6
+#include <iostream>
+
+int main() {
+    int num1, num2;
+
+    // Введите два целых числа
+    std::cout << "Введите первое целое число: ";
+    std::cin >> num1;
+
+    std::cout << "Введите второе целое число: ";
+    std::cin >> num2;
+
+    // Вычислите среднее арифметическое
+    double average = (num1 + num2) / 2.0;
+
+    // Выведите результат
+    std::cout << "Среднее арифметическое: " << average << std::endl;
+
+    return 0;
+}
+
+
+#7
+#include <iostream>
+#include <cmath> // Для использования функции sqrt
+
+int main() {
+    int num1, num2;
+
+    // Введите два целых числа
+    std::cout << "Введите первое целое число: ";
+    std::cin >> num1;
+
+    std::cout << "Введите второе целое число: ";
+    std::cin >> num2;
+
+    // Вычислите среднее геометрическое
+    if (num1 >= 0 && num2 >= 0) {
+        double geometricMean = sqrt(static_cast<double>(num1) * num2);
+
+        // Выведите результат
+        std::cout << "Среднее геометрическое: " << geometricMean << std::endl;
+    } else {
+        std::cout << "Оба числа должны быть неотрицательными." << std::endl;
+    }
+
+    return 0;
+}
+
+
+#8
+#include <iostream>
+#include <cmath> // Для использования функции sqrt
+
+int main() {
+    double x1, y1, x2, y2;
+
+    // Введите координаты первой точки
+    std::cout << "Введите x1: ";
+    std::cin >> x1;
+    
+    std::cout << "Введите y1: ";
+    std::cin >> y1;
+
+    // Введите координаты второй точки
+    std::cout << "Введите x2: ";
+    std::cin >> x2;
+    
+    std::cout << "Введите y2: ";
+    std::cin >> y2;
+
+    // Вычислите расстояние между точками
+    double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+    // Выведите результат
+    std::cout << "Расстояние между точками: " << distance << std::endl;
+
+    return 0;
+}
+
+
+#9
+#include <iostream>
+
+int main() {
+    double num1, num2, num3;
+
+    // Введите три разных числа
+    std::cout << "Введите первое число: ";
+    std::cin >> num1;
+    
+    std::cout << "Введите второе число: ";
+    std::cin >> num2;
+    
+    std::cout << "Введите третье число: ";
+    std::cin >> num3;
+
+    // Найдите среднее число
+    if ((num1 > num2 && num1 < num3) || (num1 < num2 && num1 > num3)) {
+        std::cout << "Среднее число: " << num1 << std::endl;
+    } else if ((num2 > num1 && num2 < num3) || (num2 < num1 && num2 > num3)) {
+        std::cout << "Среднее число: " << num2 << std::endl;
+    } else {
+        std::cout << "Среднее число: " << num3 << std::endl;
+    }
+
+    return 0;
+}
+
+
+#10
+#include <iostream>
+#include <cmath> // Для использования функции sqrt
+
+int main() {
+    double a, b, c;
+
+    // Введите коэффициенты квадратного уравнения
+    std::cout << "Введите коэффициент a: ";
+    std::cin >> a;
+
+    std::cout << "Введите коэффициент b: ";
+    std::cin >> b;
+
+    std::cout << "Введите коэффициент c: ";
+    std::cin >> c;
+
+    // Вычислите дискриминант
+    double discriminant = b * b - 4 * a * c;
+
+    // Проверьте тип корней и выведите результат
+    if (discriminant > 0) {
+        double root1 = (-b + sqrt(discriminant)) / (2 * a);
+        double root2 = (-b - sqrt(discriminant)) / (2 * a);
+        std::cout << "Два корня: x1 = " << root1 << ", x2 = " << root2 << std::endl;
+    } else if (discriminant == 0) {
+        double root = -b / (2 * a);
+        std::cout << "Один корень: x = " << root << std::endl;
+    } else {
+        std::cout << "Уравнение не имеет действительных корней." << std::endl;
+    }
+
+    return 0;
+}
+
+
+#11
+#include <iostream>
+
+int main() {
+    int num1, num2, num3;
+
+    // Введите три целых числа
+    std::cout << "Введите первое целое число: ";
+    std::cin >> num1;
+
+    std::cout << "Введите второе целое число: ";
+    std::cin >> num2;
+
+    std::cout << "Введите третье целое число: ";
+    std::cin >> num3;
+
+    // Найдите наибольшее число
+    int maxNumber = num1; // Предположим, что первое число - наибольшее
+
+    if (num2 > maxNumber) {
+        maxNumber = num2; // Если второе число больше, обновляем maxNumber
+    }
+
+    if (num3 > maxNumber) {
+        maxNumber = num3; // Если третье число больше, обновляем maxNumber
+    }
+
+    // Выведите результат
+    std::cout << "Наибольшее число: " << maxNumber << std::endl;
+
+    return 0;
+}
+
+
+#12
+#include <iostream>
+
+int main() {
+    double a, b, c;
+
+    // Введите длины трех отрезков
+    std::cout << "Введите длину первого отрезка (a): ";
+    std::cin >> a;
+
+    std::cout << "Введите длину второго отрезка (b): ";
+    std::cin >> b;
+
+    std::cout << "Введите длину третьего отрезка (c): ";
+    std::cin >> c;
+
+    // Проверьте, существует ли треугольник
+    if (a + b > c && a + c > b && b + c > a) {
+        // Определите тип треугольника
+        if (a == b && b == c) {
+            std::cout << "Треугольник равносторонний." << std::endl;
+        } else if (a == b || a == c || b == c) {
+            std::cout << "Треугольник равнобедренный." << std::endl;
+        } else {
+            std::cout << "Треугольник разносторонний." << std::endl;
+        }
+    } else {
+        std::cout << "Треугольник с такими длинами отрезков не существует." << std::endl;
+    }
+
+    return 0;
+}
+
+
+#13
 
