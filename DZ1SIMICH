@@ -322,4 +322,242 @@ int main() {
 
 
 #13
+#include <iostream>
+
+int main() {
+    double x, y;
+
+    // Введите координаты точки
+    std::cout << "Введите координату x: ";
+    std::cin >> x;
+
+    std::cout << "Введите координату y: ";
+    std::cin >> y;
+
+    // Определите четверть координатной плоскости
+    if (x > 0 && y > 0) {
+        std::cout << "Точка принадлежит первой четверти." << std::endl;
+    } else if (x < 0 && y > 0) {
+        std::cout << "Точка принадлежит второй четверти." << std::endl;
+    } else if (x < 0 && y < 0) {
+        std::cout << "Точка принадлежит третьей четверти." << std::endl;
+    } else if (x > 0 && y < 0) {
+        std::cout << "Точка принадлежит четвёртой четверти." << std::endl;
+    } else if (x == 0 && y == 0) {
+        std::cout << "Точка находится в начале координат." << std::endl;
+    } else if (x == 0) {
+        std::cout << "Точка находится на оси y." << std::endl;
+    } else if (y == 0) {
+        std::cout << "Точка находится на оси x." << std::endl;
+    }
+
+    return 0;
+}
+
+
+#14
+#include <iostream>
+
+int main() {
+    int n;
+    
+    // Введите число, для которого нужно вычислить двойной факториал
+    std::cout << "Введите целое число n: ";
+    std::cin >> n;
+
+    // Инициализируем результат двойного факториала
+    int doubleFactorial = 1;
+
+    // Начинаем с n и уменьшаем значение на 2 на каждой итерации
+    while (n >= 2) {
+        doubleFactorial *= n;
+        n -= 2;
+    }
+
+    // Выводим результат
+    std::cout << "Двойной факториал: " << doubleFactorial << std::endl;
+
+    return 0;
+}
+
+
+#15
+#include <iostream>
+
+int main() {
+    int n;
+    
+    // Введите число, для которого нужно вычислить двойной факториал
+    std::cout << "Введите целое число n: ";
+    std::cin >> n;
+
+    // Инициализируем результат двойного факториала
+    int doubleFactorial = 1;
+
+    // Используем цикл for для вычисления двойного факториала
+    for (int i = n; i >= 2; i -= 2) {
+        doubleFactorial *= i;
+    }
+
+    // Выводим результат
+    std::cout << "Двойной факториал: " << doubleFactorial << std::endl;
+
+    return 0;
+}
+
+
+#19
+#include <iostream>
+#include <cmath>
+
+int main() {
+    int N;
+
+    // Введите число N
+    std::cout << "Введите число N: ";
+    std::cin >> N;
+
+    std::cout << "Точные квадраты натуральных чисел, не превосходящие " << N << ": ";
+
+    for (int i = 1; i * i <= N; ++i) {
+        int square = i * i;
+        std::cout << square << " ";
+    }
+
+    std::cout << std::endl;
+
+    return 0;
+}
+
+
+#20
+#include <iostream>
+
+bool isPowerOf22(int N) {
+    int power = 1;
+    while (power < N) {
+        power *= 22;
+    }
+    return power == N;
+}
+
+int main() {
+    int N;
+
+    // Введите число N
+    std::cout << "Введите число N: ";
+    std::cin >> N;
+
+    if (isPowerOf22(N)) {
+        std::cout << N << " является степенью числа 22." << std::endl;
+    } else {
+        std::cout << N << " не является степенью числа 22." << std::endl;
+    }
+
+    return 0;
+}
+
+
+#21
+#include <iostream>
+
+void printDigitsReverse(int N) {
+    if (N == 0) {
+        return; // Базовый случай: N равно 0, завершаем рекурсию
+    }
+    std::cout << N % 10; // Вывод последней цифры
+    printDigitsReverse(N / 10); // Рекурсивный вызов для оставшихся цифр
+}
+
+int main() {
+    int N;
+
+    // Введите натуральное число N
+    std::cout << "Введите натуральное число N: ";
+    std::cin >> N;
+
+    if (N < 0) {
+        std::cout << "Ошибка: введите натуральное число." << std::endl;
+        return 1;
+    }
+
+    std::cout << "Цифры числа " << N << " в обратном порядке: ";
+    if (N == 0) {
+        std::cout << "0"; // Отдельно обрабатываем случай, когда N равно 0
+    } else {
+        printDigitsReverse(N);
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
+
+
+#22
+#include <iostream>
+
+int findGCD(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int num1, num2;
+
+    // Введите два положительных целых числа
+    std::cout << "Введите первое положительное целое число: ";
+    std::cin >> num1;
+
+    std::cout << "Введите второе положительное целое число: ";
+    std::cin >> num2;
+
+    if (num1 <= 0 || num2 <= 0) {
+        std::cout << "Ошибка: Введите положительные целые числа." << std::endl;
+        return 1;
+    }
+
+    // Найдем НОД
+    int gcd = findGCD(num1, num2);
+
+    // Выведем результат
+    std::cout << "Наибольший общий делитель (НОД): " << gcd << std::endl;
+
+    return 0;
+}
+
+
+#23
+#include <iostream>
+#include <string>
+
+int main() {
+    // Создаем массив строк для описания отметок
+    std::string descriptions[] = {
+        "плохо",
+        "неудовлетворительно",
+        "удовлетворительно",
+        "хорошо",
+        "отлично"
+    };
+
+    int mark;
+
+    // Введите оценку (1-5)
+    std::cout << "Введите оценку (1-5): ";
+    std::cin >> mark;
+
+    if (mark < 1 || mark > 5) {
+        std::cout << "Ошибка: Введите оценку в диапазоне от 1 до 5." << std::endl;
+        return 1;
+    }
+
+    // Выводим словесное описание
+    std::cout << "Оценка: " << descriptions[mark - 1] << std::endl;
+
+    return 0;
+}
 
