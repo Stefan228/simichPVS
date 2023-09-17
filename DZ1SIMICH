@@ -1,502 +1,473 @@
 #1
-#include <iostream>
+#include <stdio.h>
 
 int main() {
     int a = 5;
     int b = 10;
+    int temp;
+
+    printf("Исходные значения: a = %d, b = %d\n", a, b);
 
     // Используем временную переменную для обмена значениями
-    int temp = a;
+    temp = a;
     a = b;
     b = temp;
 
-    std::cout << "a = " << a << std::endl;
-    std::cout << "b = " << b << std::endl;
+    printf("После обмена: a = %d, b = %d\n", a, b);
 
     return 0;
 }
 
 
 #2
-#include <iostream>
-#include <cmath> // Для использования функции sqrt
+#include <stdio.h>
+#include <math.h>
 
 int main() {
-    double a, b;
-    
-    // Введите значения катетов a и b
-    std::cout << "Введите значение катета a: ";
-    std::cin >> a;
-    
-    std::cout << "Введите значение катета b: ";
-    std::cin >> b;
+    double a, b, hypotenuse;
 
-    // Вычислите гипотенузу c
-    double c = sqrt(a * a + b * b);
+    // Вводим значения катетов
+    printf("Введите длину первого катета (a): ");
+    scanf("%lf", &a);
 
-    // Выведите результат
-    std::cout << "Гипотенуза треугольника с катетами a и b: " << c << std::endl;
+    printf("Введите длину второго катета (b): ");
+    scanf("%lf", &b);
+
+    // Находим гипотенузу
+    hypotenuse = sqrt(a * a + b * b);
+
+    // Выводим результат
+    printf("Гипотенуза треугольника с катетами a = %lf и b = %lf равна %lf\n", a, b, hypotenuse);
 
     return 0;
 }
 
 
-#3
-#include <iostream>
+№3
+#include <stdio.h>
 
 int main() {
     int number;
 
-    // Введите натуральное число
-    std::cout << "Введите натуральное число: ";
-    std::cin >> number;
+    // Вводим натуральное число
+    printf("Введите натуральное число: ");
+    scanf("%d", &number);
 
-    // Вычислите последнюю цифру
+    // Вычисляем последнюю цифру
     int lastDigit = number % 10;
 
-    // Выведите последнюю цифру
-    std::cout << "Последняя цифра числа: " << lastDigit << std::endl;
+    // Выводим последнюю цифру
+    printf("Последняя цифра введенного числа: %d\n", lastDigit);
 
     return 0;
 }
 
 
-#4
-#include <iostream>
+№4
+#include <stdio.h>
 
 int main() {
     int number;
 
-    // Введите неотрицательное целое число
-    std::cout << "Введите неотрицательное целое число: ";
-    std::cin >> number;
+    // Вводим неотрицательное целое число
+    printf("Введите неотрицательное целое число: ");
+    scanf("%d", &number);
 
-    // Найдите число десятков
+    // Находим число десятков
     int tens = (number / 10) % 10;
 
-    // Выведите число десятков
-    std::cout << "Число десятков: " << tens << std::endl;
+    // Выводим число десятков
+    printf("Число десятков: %d\n", tens);
 
     return 0;
 }
 
 
-#5
-#include <iostream>
+№5
+#include <stdio.h>
 
 int main() {
-    int number;
+    int twoDigitNumber;
 
-    // Введите двузначное число
-    std::cout << "Введите двузначное число: ";
-    std::cin >> number;
+    // Вводим двузначное число
+    printf("Введите двузначное число: ");
+    scanf("%d", &twoDigitNumber);
 
-    // Проверьте, что введено двузначное число (от 10 до 99)
-    if (number >= 10 && number <= 99) {
-        // Найдите число десятков
-        int tens = number / 10;
+    // Проверяем, что введенное число является двузначным
+    if (twoDigitNumber >= 10 && twoDigitNumber <= 99) {
+        // Находим число десятков
+        int tens = twoDigitNumber / 10;
 
-        // Выведите число десятков
-        std::cout << "Число десятков: " << tens << std::endl;
+        // Выводим число десятков
+        printf("Число десятков: %d\n", tens);
     } else {
-        std::cout << "Введенное число не является двузначным." << std::endl;
+        printf("Ошибка: Введите двузначное число.\n");
     }
 
     return 0;
 }
 
 
-#6
-#include <iostream>
+№6
+#include <stdio.h>
 
 int main() {
-    int num1, num2;
+    int a, b;
+    double average;
 
-    // Введите два целых числа
-    std::cout << "Введите первое целое число: ";
-    std::cin >> num1;
+    // Вводим две целочисленные переменные
+    printf("Введите два целых числа: ");
+    scanf("%d %d", &a, &b);
 
-    std::cout << "Введите второе целое число: ";
-    std::cin >> num2;
+    // Находим среднее арифметическое
+    average = (double)(a + b) / 2.0;
 
-    // Вычислите среднее арифметическое
-    double average = (num1 + num2) / 2.0;
-
-    // Выведите результат
-    std::cout << "Среднее арифметическое: " << average << std::endl;
+    // Выводим среднее арифметическое
+    printf("Среднее арифметическое чисел %d и %d: %.2lf\n", a, b, average);
 
     return 0;
 }
 
 
-#7
-#include <iostream>
-#include <cmath> // Для использования функции sqrt
+№7
+#include <stdio.h>
+#include <math.h>
 
 int main() {
-    int num1, num2;
+    int a, b;
+    double geometric_mean;
 
-    // Введите два целых числа
-    std::cout << "Введите первое целое число: ";
-    std::cin >> num1;
+    // Вводим две целочисленные переменные
+    printf("Введите два целых числа: ");
+    scanf("%d %d", &a, &b);
 
-    std::cout << "Введите второе целое число: ";
-    std::cin >> num2;
+    // Находим среднее геометрическое
+    geometric_mean = sqrt((double)a * b);
 
-    // Вычислите среднее геометрическое
-    if (num1 >= 0 && num2 >= 0) {
-        double geometricMean = sqrt(static_cast<double>(num1) * num2);
-
-        // Выведите результат
-        std::cout << "Среднее геометрическое: " << geometricMean << std::endl;
-    } else {
-        std::cout << "Оба числа должны быть неотрицательными." << std::endl;
-    }
+    // Выводим среднее геометрическое
+    printf("Среднее геометрическое чисел %d и %d: %.2lf\n", a, b, geometric_mean);
 
     return 0;
 }
 
 
-#8
-#include <iostream>
-#include <cmath> // Для использования функции sqrt
+№8
+#include <stdio.h>
+#include <math.h>
 
 int main() {
     double x1, y1, x2, y2;
+    double distance;
 
-    // Введите координаты первой точки
-    std::cout << "Введите x1: ";
-    std::cin >> x1;
-    
-    std::cout << "Введите y1: ";
-    std::cin >> y1;
+    // Вводим координаты первой точки
+    printf("Введите координаты первой точки (x1 y1): ");
+    scanf("%lf %lf", &x1, &y1);
 
-    // Введите координаты второй точки
-    std::cout << "Введите x2: ";
-    std::cin >> x2;
-    
-    std::cout << "Введите y2: ";
-    std::cin >> y2;
+    // Вводим координаты второй точки
+    printf("Введите координаты второй точки (x2 y2): ");
+    scanf("%lf %lf", &x2, &y2);
 
-    // Вычислите расстояние между точками
-    double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+    // Находим расстояние между точками
+    distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 
-    // Выведите результат
-    std::cout << "Расстояние между точками: " << distance << std::endl;
+    // Выводим расстояние
+    printf("Расстояние между точками: %.2lf\n", distance);
 
     return 0;
 }
 
 
-#9
-#include <iostream>
+№9
+#include <stdio.h>
 
 int main() {
     double num1, num2, num3;
+    double middle;
 
-    // Введите три разных числа
-    std::cout << "Введите первое число: ";
-    std::cin >> num1;
-    
-    std::cout << "Введите второе число: ";
-    std::cin >> num2;
-    
-    std::cout << "Введите третье число: ";
-    std::cin >> num3;
+    // Вводим три разных числа
+    printf("Введите три разных числа: ");
+    scanf("%lf %lf %lf", &num1, &num2, &num3);
 
-    // Найдите среднее число
+    // Проверяем, какое из чисел является средним
     if ((num1 > num2 && num1 < num3) || (num1 < num2 && num1 > num3)) {
-        std::cout << "Среднее число: " << num1 << std::endl;
+        middle = num1;
     } else if ((num2 > num1 && num2 < num3) || (num2 < num1 && num2 > num3)) {
-        std::cout << "Среднее число: " << num2 << std::endl;
+        middle = num2;
     } else {
-        std::cout << "Среднее число: " << num3 << std::endl;
+        middle = num3;
     }
+
+    // Выводим среднее число
+    printf("Среднее число: %.2lf\n", middle);
 
     return 0;
 }
 
 
-#10
-#include <iostream>
-#include <cmath> // Для использования функции sqrt
+№10
+#include <stdio.h>
+#include <math.h>
 
 int main() {
     double a, b, c;
+    double discriminant, root1, root2;
 
-    // Введите коэффициенты квадратного уравнения
-    std::cout << "Введите коэффициент a: ";
-    std::cin >> a;
+    // Вводим коэффициенты a, b и c
+    printf("Введите коэффициенты a, b и c: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
 
-    std::cout << "Введите коэффициент b: ";
-    std::cin >> b;
+    // Вычисляем дискриминант
+    discriminant = b * b - 4 * a * c;
 
-    std::cout << "Введите коэффициент c: ";
-    std::cin >> c;
-
-    // Вычислите дискриминант
-    double discriminant = b * b - 4 * a * c;
-
-    // Проверьте тип корней и выведите результат
+    // Проверяем значение дискриминанта
     if (discriminant > 0) {
-        double root1 = (-b + sqrt(discriminant)) / (2 * a);
-        double root2 = (-b - sqrt(discriminant)) / (2 * a);
-        std::cout << "Два корня: x1 = " << root1 << ", x2 = " << root2 << std::endl;
+        // Два действительных корня
+        root1 = (-b + sqrt(discriminant)) / (2 * a);
+        root2 = (-b - sqrt(discriminant)) / (2 * a);
+        printf("Уравнение имеет два действительных корня:\n");
+        printf("Корень 1: %.2lf\n", root1);
+        printf("Корень 2: %.2lf\n", root2);
     } else if (discriminant == 0) {
-        double root = -b / (2 * a);
-        std::cout << "Один корень: x = " << root << std::endl;
+        // Один действительный корень
+        root1 = -b / (2 * a);
+        printf("Уравнение имеет один действительный корень:\n");
+        printf("Корень: %.2lf\n", root1);
     } else {
-        std::cout << "Уравнение не имеет действительных корней." << std::endl;
+        // Нет действительных корней
+        printf("Уравнение не имеет действительных корней (корни комплексные).\n");
     }
 
     return 0;
 }
 
 
-#11
-#include <iostream>
+№11
+#include <stdio.h>
 
 int main() {
     int num1, num2, num3;
 
-    // Введите три целых числа
-    std::cout << "Введите первое целое число: ";
-    std::cin >> num1;
+    // Вводим три целых числа
+    printf("Введите три целых числа: ");
+    scanf("%d %d %d", &num1, &num2, &num3);
 
-    std::cout << "Введите второе целое число: ";
-    std::cin >> num2;
-
-    std::cout << "Введите третье целое число: ";
-    std::cin >> num3;
-
-    // Найдите наибольшее число
-    int maxNumber = num1; // Предположим, что первое число - наибольшее
-
-    if (num2 > maxNumber) {
-        maxNumber = num2; // Если второе число больше, обновляем maxNumber
+    // Проверяем, какое из чисел наибольшее
+    if (num1 >= num2 && num1 >= num3) {
+        printf("Наибольшее число: %d\n", num1);
+    } else if (num2 >= num1 && num2 >= num3) {
+        printf("Наибольшее число: %d\n", num2);
+    } else {
+        printf("Наибольшее число: %d\n", num3);
     }
-
-    if (num3 > maxNumber) {
-        maxNumber = num3; // Если третье число больше, обновляем maxNumber
-    }
-
-    // Выведите результат
-    std::cout << "Наибольшее число: " << maxNumber << std::endl;
 
     return 0;
 }
 
 
-#12
-#include <iostream>
+№12
+#include <stdio.h>
 
 int main() {
     double a, b, c;
 
-    // Введите длины трех отрезков
-    std::cout << "Введите длину первого отрезка (a): ";
-    std::cin >> a;
+    // Вводим длины трех отрезков
+    printf("Введите длины трех отрезков: ");
+    scanf("%lf %lf %lf", &a, &b, &c);
 
-    std::cout << "Введите длину второго отрезка (b): ";
-    std::cin >> b;
-
-    std::cout << "Введите длину третьего отрезка (c): ";
-    std::cin >> c;
-
-    // Проверьте, существует ли треугольник
+    // Проверяем условия существования треугольника
     if (a + b > c && a + c > b && b + c > a) {
-        // Определите тип треугольника
         if (a == b && b == c) {
-            std::cout << "Треугольник равносторонний." << std::endl;
+            printf("Треугольник равносторонний.\n");
         } else if (a == b || a == c || b == c) {
-            std::cout << "Треугольник равнобедренный." << std::endl;
+            printf("Треугольник равнобедренный.\n");
         } else {
-            std::cout << "Треугольник разносторонний." << std::endl;
+            printf("Треугольник разносторонний.\n");
         }
     } else {
-        std::cout << "Треугольник с такими длинами отрезков не существует." << std::endl;
+        printf("Треугольник с такими длинами сторон не существует.\n");
     }
 
     return 0;
 }
 
 
-#13
-#include <iostream>
+№13
+#include <stdio.h>
 
 int main() {
     double x, y;
 
-    // Введите координаты точки
-    std::cout << "Введите координату x: ";
-    std::cin >> x;
+    // Вводим координаты точки
+    printf("Введите координаты точки (x, y): ");
+    scanf("%lf %lf", &x, &y);
 
-    std::cout << "Введите координату y: ";
-    std::cin >> y;
-
-    // Определите четверть координатной плоскости
     if (x > 0 && y > 0) {
-        std::cout << "Точка принадлежит первой четверти." << std::endl;
+        printf("Точка находится в первой четверти.\n");
     } else if (x < 0 && y > 0) {
-        std::cout << "Точка принадлежит второй четверти." << std::endl;
+        printf("Точка находится во второй четверти.\n");
     } else if (x < 0 && y < 0) {
-        std::cout << "Точка принадлежит третьей четверти." << std::endl;
+        printf("Точка находится в третьей четверти.\n");
     } else if (x > 0 && y < 0) {
-        std::cout << "Точка принадлежит четвёртой четверти." << std::endl;
-    } else if (x == 0 && y == 0) {
-        std::cout << "Точка находится в начале координат." << std::endl;
-    } else if (x == 0) {
-        std::cout << "Точка находится на оси y." << std::endl;
-    } else if (y == 0) {
-        std::cout << "Точка находится на оси x." << std::endl;
-    }
-
-    return 0;
-}
-
-
-#14
-#include <iostream>
-
-int main() {
-    int n;
-    
-    // Введите число, для которого нужно вычислить двойной факториал
-    std::cout << "Введите целое число n: ";
-    std::cin >> n;
-
-    // Инициализируем результат двойного факториала
-    int doubleFactorial = 1;
-
-    // Начинаем с n и уменьшаем значение на 2 на каждой итерации
-    while (n >= 2) {
-        doubleFactorial *= n;
-        n -= 2;
-    }
-
-    // Выводим результат
-    std::cout << "Двойной факториал: " << doubleFactorial << std::endl;
-
-    return 0;
-}
-
-
-#15
-#include <iostream>
-
-int main() {
-    int n;
-    
-    // Введите число, для которого нужно вычислить двойной факториал
-    std::cout << "Введите целое число n: ";
-    std::cin >> n;
-
-    // Инициализируем результат двойного факториала
-    int doubleFactorial = 1;
-
-    // Используем цикл for для вычисления двойного факториала
-    for (int i = n; i >= 2; i -= 2) {
-        doubleFactorial *= i;
-    }
-
-    // Выводим результат
-    std::cout << "Двойной факториал: " << doubleFactorial << std::endl;
-
-    return 0;
-}
-
-
-#19
-#include <iostream>
-#include <cmath>
-
-int main() {
-    int N;
-
-    // Введите число N
-    std::cout << "Введите число N: ";
-    std::cin >> N;
-
-    std::cout << "Точные квадраты натуральных чисел, не превосходящие " << N << ": ";
-
-    for (int i = 1; i * i <= N; ++i) {
-        int square = i * i;
-        std::cout << square << " ";
-    }
-
-    std::cout << std::endl;
-
-    return 0;
-}
-
-
-#20
-#include <iostream>
-
-bool isPowerOf22(int N) {
-    int power = 1;
-    while (power < N) {
-        power *= 22;
-    }
-    return power == N;
-}
-
-int main() {
-    int N;
-
-    // Введите число N
-    std::cout << "Введите число N: ";
-    std::cin >> N;
-
-    if (isPowerOf22(N)) {
-        std::cout << N << " является степенью числа 22." << std::endl;
+        printf("Точка находится в четвёртой четверти.\n");
+    } else if (x == 0 && y != 0) {
+        printf("Точка находится на оси y.\n");
+    } else if (x != 0 && y == 0) {
+        printf("Точка находится на оси x.\n");
     } else {
-        std::cout << N << " не является степенью числа 22." << std::endl;
+        printf("Точка находится в начале координат.\n");
     }
 
     return 0;
 }
 
 
-#21
-#include <iostream>
+№14
+#include <stdio.h>
 
-void printDigitsReverse(int N) {
-    if (N == 0) {
-        return; // Базовый случай: N равно 0, завершаем рекурсию
+int main() {
+    int n;
+    long long double_factorial = 1;  // Используем long long для хранения больших значений
+
+    // Вводим число n
+    printf("Введите целое число n: ");
+    scanf("%d", &n);
+
+    // Проверяем, что n >= 2, так как двойной факториал определен только для n >= 2
+    if (n >= 2) {
+        // Рассчитываем двойной факториал
+        while (n >= 2) {
+            double_factorial *= n;
+            n -= 2;  // Уменьшаем n на 2
+        }
+
+        printf("Двойной факториал: %lld\n", double_factorial);
+    } else if (n == 0) {
+        // Двойной факториал для n = 0 равен 1
+        printf("Двойной факториал: 1\n");
+    } else {
+        printf("Двойной факториал не определен для отрицательных чисел.\n");
     }
-    std::cout << N % 10; // Вывод последней цифры
-    printDigitsReverse(N / 10); // Рекурсивный вызов для оставшихся цифр
+
+    return 0;
+}
+
+
+№15
+#include <stdio.h>
+
+int main() {
+    int n;
+    long long double_factorial = 1;  // Используем long long для хранения больших значений
+
+    // Вводим число n
+    printf("Введите целое число n: ");
+    scanf("%d", &n);
+
+    // Проверяем, что n >= 2, так как двойной факториал определен только для n >= 2
+    if (n >= 2) {
+        // Рассчитываем двойной факториал
+        for (; n >= 2; n -= 2) {
+            double_factorial *= n;
+        }
+
+        printf("Двойной факториал: %lld\n", double_factorial);
+    } else if (n == 0) {
+        // Двойной факториал для n = 0 равен 1
+        printf("Двойной факториал: 1\n");
+    } else {
+        printf("Двойной факториал не определен для отрицательных чисел.\n");
+    }
+
+    return 0;
+}
+
+
+№19
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int N;
+
+    // Вводим число N
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    printf("Точные квадраты натуральных чисел, не превосходящие %d:\n", N);
+
+    int i = 1;
+    while (i * i <= N) {
+        printf("%d\n", i * i);
+        i++;
+    }
+
+    return 0;
+}
+
+
+№20
+#include <stdio.h>
+
+int main() {
+    int N;
+
+    // Вводим число N
+    printf("Введите число N: ");
+    scanf("%d", &N);
+
+    int power_of_22 = 1; // Начинаем с 22^0 = 1
+
+    while (power_of_22 < N) {
+        power_of_22 *= 22; // Умножаем на 22
+    }
+
+    if (power_of_22 == N) {
+        printf("%d является степенью числа 22.\n", N);
+    } else {
+        printf("%d не является степенью числа 22.\n", N);
+    }
+
+    return 0;
+}
+
+
+№21
+#include <stdio.h>
+
+void printDigitsInReverse(int N) {
+    if (N > 0) {
+        // Извлекаем последнюю цифру и выводим её
+        int lastDigit = N % 10;
+        printf("%d", lastDigit);
+        
+        // Рекурсивно вызываем функцию для оставшейся части числа без последней цифры
+        printDigitsInReverse(N / 10);
+    }
 }
 
 int main() {
     int N;
 
-    // Введите натуральное число N
-    std::cout << "Введите натуральное число N: ";
-    std::cin >> N;
+    // Вводим натуральное число N
+    printf("Введите натуральное число N: ");
+    scanf("%d", &N);
 
     if (N < 0) {
-        std::cout << "Ошибка: введите натуральное число." << std::endl;
-        return 1;
-    }
-
-    std::cout << "Цифры числа " << N << " в обратном порядке: ";
-    if (N == 0) {
-        std::cout << "0"; // Отдельно обрабатываем случай, когда N равно 0
+        printf("Число не является натуральным.\n");
     } else {
-        printDigitsReverse(N);
+        printf("Цифры числа %d в обратном порядке: ", N);
+        printDigitsInReverse(N);
+        printf("\n");
     }
-    std::cout << std::endl;
 
     return 0;
 }
 
 
-#22
-#include <iostream>
+№22
+#include <stdio.h>
 
-int findGCD(int a, int b) {
+int gcd(int a, int b) {
     while (b != 0) {
         int temp = b;
         b = a % b;
@@ -508,56 +479,40 @@ int findGCD(int a, int b) {
 int main() {
     int num1, num2;
 
-    // Введите два положительных целых числа
-    std::cout << "Введите первое положительное целое число: ";
-    std::cin >> num1;
-
-    std::cout << "Введите второе положительное целое число: ";
-    std::cin >> num2;
+    // Вводим два положительных целых числа
+    printf("Введите два положительных целых числа: ");
+    scanf("%d %d", &num1, &num2);
 
     if (num1 <= 0 || num2 <= 0) {
-        std::cout << "Ошибка: Введите положительные целые числа." << std::endl;
-        return 1;
+        printf("Числа должны быть положительными целыми.\n");
+    } else {
+        int result = gcd(num1, num2);
+        printf("Наибольший общий делитель: %d\n", result);
     }
-
-    // Найдем НОД
-    int gcd = findGCD(num1, num2);
-
-    // Выведем результат
-    std::cout << "Наибольший общий делитель (НОД): " << gcd << std::endl;
 
     return 0;
 }
 
 
-#23
-#include <iostream>
-#include <string>
+№23
+#include <stdio.h>
 
 int main() {
-    // Создаем массив строк для описания отметок
-    std::string descriptions[] = {
-        "плохо",
-        "неудовлетворительно",
-        "удовлетворительно",
-        "хорошо",
-        "отлично"
-    };
+    char *grades[] = {"плохо", "неудовлетворительно", "удовлетворительно", "хорошо", "отлично"};
+    int grade;
 
-    int mark;
+    // Вводим оценку от 1 до 5
+    printf("Введите оценку от 1 до 5: ");
+    scanf("%d", &grade);
 
-    // Введите оценку (1-5)
-    std::cout << "Введите оценку (1-5): ";
-    std::cin >> mark;
-
-    if (mark < 1 || mark > 5) {
-        std::cout << "Ошибка: Введите оценку в диапазоне от 1 до 5." << std::endl;
-        return 1;
+    if (grade >= 1 && grade <= 5) {
+        printf("Словесное описание оценки: %s\n", grades[grade - 1]);
+    } else {
+        printf("Некорректная оценка. Введите оценку от 1 до 5.\n");
     }
-
-    // Выводим словесное описание
-    std::cout << "Оценка: " << descriptions[mark - 1] << std::endl;
 
     return 0;
 }
+
+
 
