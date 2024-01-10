@@ -1,0 +1,88 @@
+ЗАДАЧА 1
+
+#include <stdio.h>
+
+int findMaxIndex(int arr[], int size) {
+    int maxIndex = 0;
+    
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > arr[maxIndex]) {
+            maxIndex = i;
+        }
+    }
+    
+    return maxIndex;
+}
+
+int findMinIndex(int arr[], int size) {
+    int minIndex = 0;
+    
+    for (int i = 1; i < size; i++) {
+        if (arr[i] < arr[minIndex]) {
+            minIndex = i;
+        }
+    }
+    
+    return minIndex;
+}
+
+int sumBetweenMaxAndMin(int arr[], int size) {
+    int maxIndex = findMaxIndex(arr, size);
+    int minIndex = findMinIndex(arr, size);
+    
+    int start = (maxIndex < minIndex) ? maxIndex : minIndex;
+    int end = (maxIndex > minIndex) ? maxIndex : minIndex;
+    
+    int sum = 0;
+    for (int i = start; i <= end; i++) {
+        sum += arr[i];
+    }
+    
+    return sum;
+}
+
+int main() {
+    int arr[] = {3, 8, 6, 12, 4, 9, 2, 11, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    int result = sumBetweenMaxAndMin(arr, size);
+    printf("Сумма элементов между максимальным и минимальным элементами: %d\n", result);
+    
+    return 0;
+}
+
+
+ЗАДАЧА 2
+#include <stdio.h>
+#include <math.h>
+
+#define EPSILON 0.001
+
+// Функция, для которой ищем корень
+double f(double x) {
+    return pow(cos(x), 5) + pow(x, 4) - 345.3 * x - 23;
+}
+
+// Функция для метода деления отрезка пополам
+double bisectionMethod(double a, double b) {
+    double c = (a + b) / 2;
+    if ((b - a) < EPSILON) {
+        return c;
+    }
+    if (f(c) == 0) {
+        return c;
+    }
+    if (f(a) * f(c) < 0) {
+        return bisectionMethod(a, c);
+    } else {
+        return bisectionMethod(c, b);
+    }
+}
+
+int main() {
+    double a = 0;  // Левый конец отрезка
+    double b = 10; // Правый конец отрезка
+    
+    printf("Корень уравнения на отрезке [0;10]: %lf\n", bisectionMethod(a, b));
+    return 0;
+}
